@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandClash</title>
+    <link rel="stylesheet" href="assets/style/Bootstrap/css/bootstrap.css">
+    <style>
+        body {
+            background-color: #191970;
+        }
+        input {
+            margin-bottom: 20px;
+            border: none;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body><nav class="navbar navbar-expand-lg" style="background-color:#191970;">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="index.html" style="font-weight: bolder;">HandClash</a>
+    </div>
+</nav><br>
+    <div class="container"><br>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1 class="text-white text-center">Settings</h1><br>
+        <h3 class="text-white">Account Information</h3>
+        <form action="">
+            <label for="name" class="text-white">Username</label><br>
+            <input type="text" name="" id="name"><br>
+            <label for="name" class="text-white">Email</label><br>
+            <input type="email" name="" id="email"><br>
+            <label for="name" class="text-white">Birthday</label><br>
+            <input type="date" name="" id="date"><br>
+            <button class="btn text-white bg-primary" style="text-align: center; width: 100%; margin-top: 10px;" id="btn1">Update</button>
+        </form>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</body>
+<script>
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let date = document.getElementById("date");
+    let btn1 = document.getElementById("btn1");
+    let data_name = localStorage.getItem("name");
+    let data_email = localStorage.getItem("email");
+    let data_date = localStorage.getItem("date");
+    
+    document.addEventListener("DOMContentLoaded", function () {
+        name.value = data_name;
+        email.value = data_email;
+        date.value = data_date;
+    });
+    btn1.addEventListener("click", function () {
+        data_name = name.value;
+        data_email = email.value;
+        data_date = date.value;
+        localStorage.setItem("name", data_name);
+        localStorage.setItem("email", data_email);
+        localStorage.setItem("date", data_date);
+        name.value = data_name;
+        email.value = data_email;
+        date.value = data_date;
+    });
+</script>
+</html>

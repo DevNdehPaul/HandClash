@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandClash</title>
+    <link rel="stylesheet" href="assets/style/Bootstrap/css/bootstrap.css">
+    <style>
+        body {
+            background-color: #191970;
+        }
+        input {
+            margin-bottom: 20px;
+            border: none;
+            background-color: white;
+            padding: 5px;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body><nav class="navbar navbar-expand-lg" style="background-color:#191970;">
+    <div class="container-fluid">
+        <a class="navbar-brand text-white" href="index.html" style="font-weight: bolder;">HandClash</a>
+    </div>
+</nav><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <h3 style="text-align: center; font-weight: bolder; color: white;">Register Yourself</h3>
+                <p style="text-align: center; color: white;">Welcome Back! Please Enter Your Details.</p>
+                        <form action="">
+                            <label for="text" style="font-weight: bolder; color: white;">Username</label><br>
+                            <input type="text" id="name"><br>
+                            <label for="text" style="font-weight: bolder; color: white;">Email</label><br>
+                            <input type="email" id="email"><br>
+                            <label for="text" style="font-weight: bolder; color: white;">Birthday</label><br>
+                            <input type="date" id="date"><br>
+                            <input type="submit" value="Register" style="color: white;" id="btn1" class="btn bg-primary">
+                        </form><br><br>
+    </div>
+    <div class="col-md-4"></div>
+    </div>
+</div>
+</body>
+<script>
+    let name = document.getElementById("name");
+    let email = document.getElementById("email");
+    let date = document.getElementById("date");
+    let btn1 = document.getElementById("btn1");
+    let data_name;
+    let data_email;
+    let data_date;
+    
+    btn1.addEventListener("click", function () {
+        data_name = name.value;
+        data_email = email.value;
+        data_date = date.value;
+        localStorage.setItem("name", data_name);
+        localStorage.setItem("email", data_email);
+        localStorage.setItem("date", data_date);
+    });
+    
+</script>
+</html>
